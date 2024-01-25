@@ -38,7 +38,7 @@ def plot(history)
   g.labels = plot_labels(history)
   g.title = "Model training"
   g.data "Training loss", history[:loss]
-  Dir.mkdir "tmp"
+  Dir.mkdir "tmp" unless Dir.exist? "tmp"
   g.write "tmp/celsius-fahrenheit.png"
 end
 
